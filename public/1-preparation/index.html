@@ -3,30 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.101.0" />
+    <meta name="generator" content="Hugo 0.99.1" />
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Preparation :: AWS System Manager</title>
+    <title>Preparation :: Serverless - Setting Up an S3 Static SSL Website</title>
 
     
-    <link href="/css/nucleus.css?1678237448" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1678237448" rel="stylesheet">
-    <link href="/css/hybrid.css?1678237448" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1678237448" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1678237448" rel="stylesheet">
-    <link href="/css/auto-complete.css?1678237448" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1678237448" rel="stylesheet">
-    <link href="/css/theme.css?1678237448" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1678237448" rel="stylesheet">
+    <link href="/css/nucleus.css?1681206111" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1681206111" rel="stylesheet">
+    <link href="/css/hybrid.css?1681206111" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1681206111" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1681206111" rel="stylesheet">
+    <link href="/css/auto-complete.css?1681206111" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1681206111" rel="stylesheet">
+    <link href="/css/theme.css?1681206111" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1681206111" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1678237448" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1681206111" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1678237448"></script>
+    <script src="/js/jquery-3.3.1.min.js?1681206111"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1678237448"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1678237448"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1681206111"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1681206111"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1678237448"></script>
+<script type="text/javascript" src="/js/search.js?1681206111"></script>
 
     
   </div>
@@ -83,7 +83,7 @@
   
     
     <li data-nav-id="/1-preparation/" title="Preparation" class="dd-item 
-        
+        parent
         active
         
         ">
@@ -108,13 +108,13 @@
  
   
     
-    <li data-nav-id="/2-create-domain-hosted-zone/" title="Create Domain and Hosted zone" class="dd-item 
+    <li data-nav-id="/2-create-domain-hosted-zone/" title="Create Domain And Hosted Zone" class="dd-item 
         
         
         
         ">
       <a href="/2-create-domain-hosted-zone/">
-           <b> 2. </b> Create Domain and Hosted zone
+           <b> 2. </b> Create Domain And Hosted Zone
           
             <i class="fas fa-check read-icon"></i>
           
@@ -134,13 +134,13 @@
  
   
     
-    <li data-nav-id="/3-request-certification/" title="Request SSL certificate" class="dd-item 
+    <li data-nav-id="/3-request-certification/" title="Request SSL Certificate" class="dd-item 
         
         
         
         ">
       <a href="/3-request-certification/">
-           <b> 3. </b> Request SSL certificate
+           <b> 3. </b> Request SSL Certificate
           
             <i class="fas fa-check read-icon"></i>
           
@@ -160,13 +160,13 @@
  
   
     
-    <li data-nav-id="/4-create-cloud-front/" title="Create ClodFront distribution" class="dd-item 
+    <li data-nav-id="/4-create-cloud-front/" title="Create CloudFront Distribution" class="dd-item 
         
         
         
         ">
       <a href="/4-create-cloud-front/">
-           <b> 4. </b> Create ClodFront distribution
+           <b> 4. </b> Create CloudFront Distribution
           
             <i class="fas fa-check read-icon"></i>
           
@@ -214,7 +214,11 @@
         <ul>
           
               <li> 
-                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj/"><i class='fab fa-facebook'></i> AWS Study Group</a>
+                  <a class="padding" href="https://aws.amazon.com/blogs"><i class='fab fa-aws'></i> AWS Study Group - Blog</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj"><i class='fab fa-facebook'></i> AWS Study Group - FB Group</a>
               </li>
           
         </ul>
@@ -282,7 +286,7 @@
       <left>
     
      <b> Workshop</b> <br>
-    <img src="https://hitwebcounter.com/counter/counter.php?page=8147601&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=8420231&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
      <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
     <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
      
@@ -291,16 +295,16 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>07-03-2023</font></i>
-    </left>
-    <left>
-        <br>
-        <br>
-            <b> Team </b> <br>
+        <i><font color=orange>11-04-2023</font></i>
+</left>
+<left>
+    <br>
+    <br>
+    <b> Team </b> <br>
            
-            <i> <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>   
-        </i>
-        </left>
+    <i> <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>   
+    </i>
+</left>
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
@@ -397,10 +401,10 @@
 		
 			
 				<li>
-					<a href="/1-preparation/_index.files/fcj-book-store-sam-ws5.zip" >
-						fcj-book-store-sam-ws5.zip
+					<a href="/1-preparation/_index.files/fcjdmssam-w5.zip" >
+						fcjdmssam-w5.zip
 					</a>
-					(8258 ko)
+					(17 ko)
 				</li>
 			
 		
@@ -419,24 +423,25 @@ sam deploy --guided
 <li>Enter the following content:</li>
 </ol>
 <ul>
-<li>Stack Name []: <code>fcj-book-store</code></li>
+<li>Stack Name []: <code>fcjdmsapp</code></li>
 <li>AWS Region []: <code>ap-southeast-1</code></li>
-<li>Confirm changes before deploy [Y/n]: y</li>
-<li>Allow SAM CLI IAM role creation [Y/n]: y</li>
-<li>Disable rollback [y/N]: n</li>
-<li>BooksList may not have authorization defined, Is this okay? [y/N]: y</li>
-<li>BookCreate may not have authorization defined, Is this okay? [y/N]: y</li>
-<li>BookDelete may not have authorization defined, Is this okay? [y/N]: y</li>
-<li>Save arguments to configuration file [Y/n]: y</li>
+<li>Confirm changes before deploy [Y/n]: <code>y</code></li>
+<li>Allow SAM CLI IAM role creation [Y/n]: <code>y</code></li>
+<li>Disable rollback [y/N]: <code>n</code></li>
+<li>BooksList may not have authorization defined, Is this okay? [y/N]: <code>y</code></li>
+<li>BookCreate may not have authorization defined, Is this okay? [y/N]: <code>y</code></li>
+<li>BookDelete may not have authorization defined, Is this okay? [y/N]: <code>y</code></li>
+<li>Save arguments to configuration file [Y/n]: <code>y</code></li>
 </ul>
 <ol start="4">
-<li>Open <a href="https://ap-southeast-1.console.aws.amazon.com/apigateway/main/apis?region=ap-southeast-1">AWS APIs Gateway console</a></li>
+<li>
+<p>Open <a href="https://ap-southeast-1.console.aws.amazon.com/apigateway/main/apis?region=ap-southeast-1">AWS APIs Gateway console</a></p>
+</li>
+<li>
+<p>Click <strong>API Gateway REST API to Lambda</strong></p>
+</li>
 </ol>
 <p><img src="/images/1-preparation/1-preparation-1.png?featherlight=false&amp;width=90pc" alt="CreateUserPool"></p>
-<ol start="5">
-<li>Click <strong>API Gateway REST API to Lambda</strong></li>
-</ol>
-<p><img src="/images/1-preparation/1-preparation-2.png?featherlight=false&amp;width=90pc" alt="CreateUserPool"></p>
 <ol start="6">
 <li>Click <strong>Stage</strong> on the left menu</li>
 </ol>
@@ -444,20 +449,24 @@ sam deploy --guided
 <li>Click <strong>staging</strong></li>
 <li>Record the <strong>InvokeURL</strong></li>
 </ul>
-<p><img src="/images/1-preparation/1-preparation-3.png?featherlight=false&amp;width=90pc" alt="CreateUserPool"></p>
+<p><img src="/images/1-preparation/1-preparation-2.png?featherlight=false&amp;width=90pc" alt="CreateUserPool"></p>
 <ol start="7">
-<li>Run the below command to download the source code of <strong>fcj-serverless-frontend</strong> to your device</li>
+<li>If you have not downloaded the application code, run the command below:</li>
 </ol>
 <pre tabindex="0"><code>git clone https://github.com/AWS-First-Cloud-Journey/FCJ-Serverless-Workshop.git
-</code></pre><ol start="8">
+</code></pre><ul>
+<li>Open the <strong>src/constant.js</strong> file, replace the value of <strong>APP_API_URL</strong> with <strong>InvokeURL</strong></li>
+</ul>
+<p><img src="/images/1-preparation/1-preparation-3.png?featherlight=false&amp;width=90pc" alt="CreateUserPool"></p>
+<ol start="8">
 <li>Run the below commands to build project</li>
 </ol>
-<pre tabindex="0"><code>cd fcj-serverless-frontend
+<pre tabindex="0"><code>cd fcj-serverless-dms
 yarn build
 </code></pre><ol start="9">
 <li>We have finished building the front-end. Next, run the below command to upload <strong>build</strong> folder to S3 bucket</li>
 </ol>
-<pre tabindex="0"><code>aws s3 cp build s3://fcj-book-store --recursive
+<pre tabindex="0"><code>aws s3 cp build s3://fcjdmswebstore --recursive
 </code></pre><p>So we have rebuilt the web application.</p>
 
 
@@ -590,7 +599,7 @@ yarn build
 			<a class="nav nav-prev" href="/" title="Serverless - Set Up An S3 Static SSL Website"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/2-create-domain-hosted-zone/" title="Create Domain and Hosted zone" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/2-create-domain-hosted-zone/" title="Create Domain And Hosted Zone" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -600,19 +609,19 @@ yarn build
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1678237448"></script>
-    <script src="/js/perfect-scrollbar.min.js?1678237448"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1678237448"></script>
-    <script src="/js/jquery.sticky.js?1678237448"></script>
-    <script src="/js/featherlight.min.js?1678237448"></script>
-    <script src="/js/highlight.pack.js?1678237448"></script>
+    <script src="/js/clipboard.min.js?1681206111"></script>
+    <script src="/js/perfect-scrollbar.min.js?1681206111"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1681206111"></script>
+    <script src="/js/jquery.sticky.js?1681206111"></script>
+    <script src="/js/featherlight.min.js?1681206111"></script>
+    <script src="/js/highlight.pack.js?1681206111"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1678237448"></script>
-    <script src="/js/learn.js?1678237448"></script>
-    <script src="/js/hugo-learn.js?1678237448"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1681206111"></script>
+    <script src="/js/learn.js?1681206111"></script>
+    <script src="/js/hugo-learn.js?1681206111"></script>
 
-    <link href="/mermaid/mermaid.css?1678237448" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1678237448"></script>
+    <link href="/mermaid/mermaid.css?1681206111" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1681206111"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

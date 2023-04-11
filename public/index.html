@@ -3,30 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.101.0" />
+    <meta name="generator" content="Hugo 0.99.1" />
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Serverless - Set Up An S3 Static SSL Website :: AWS System Manager</title>
+    <title>Serverless - Set Up An S3 Static SSL Website :: Serverless - Setting Up an S3 Static SSL Website</title>
 
     
-    <link href="/css/nucleus.css?1678237448" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1678237448" rel="stylesheet">
-    <link href="/css/hybrid.css?1678237448" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1678237448" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1678237448" rel="stylesheet">
-    <link href="/css/auto-complete.css?1678237448" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1678237448" rel="stylesheet">
-    <link href="/css/theme.css?1678237448" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1678237448" rel="stylesheet">
+    <link href="/css/nucleus.css?1681206111" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1681206111" rel="stylesheet">
+    <link href="/css/hybrid.css?1681206111" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1681206111" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1681206111" rel="stylesheet">
+    <link href="/css/auto-complete.css?1681206111" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1681206111" rel="stylesheet">
+    <link href="/css/theme.css?1681206111" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1681206111" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1678237448" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1681206111" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1678237448"></script>
+    <script src="/js/jquery-3.3.1.min.js?1681206111"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1678237448"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1678237448"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1681206111"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1681206111"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1678237448"></script>
+<script type="text/javascript" src="/js/search.js?1681206111"></script>
 
     
   </div>
@@ -108,13 +108,13 @@
  
   
     
-    <li data-nav-id="/2-create-domain-hosted-zone/" title="Create Domain and Hosted zone" class="dd-item 
+    <li data-nav-id="/2-create-domain-hosted-zone/" title="Create Domain And Hosted Zone" class="dd-item 
         
         
         
         ">
       <a href="/2-create-domain-hosted-zone/">
-           <b> 2. </b> Create Domain and Hosted zone
+           <b> 2. </b> Create Domain And Hosted Zone
           
             <i class="fas fa-check read-icon"></i>
           
@@ -134,13 +134,13 @@
  
   
     
-    <li data-nav-id="/3-request-certification/" title="Request SSL certificate" class="dd-item 
+    <li data-nav-id="/3-request-certification/" title="Request SSL Certificate" class="dd-item 
         
         
         
         ">
       <a href="/3-request-certification/">
-           <b> 3. </b> Request SSL certificate
+           <b> 3. </b> Request SSL Certificate
           
             <i class="fas fa-check read-icon"></i>
           
@@ -160,13 +160,13 @@
  
   
     
-    <li data-nav-id="/4-create-cloud-front/" title="Create ClodFront distribution" class="dd-item 
+    <li data-nav-id="/4-create-cloud-front/" title="Create CloudFront Distribution" class="dd-item 
         
         
         
         ">
       <a href="/4-create-cloud-front/">
-           <b> 4. </b> Create ClodFront distribution
+           <b> 4. </b> Create CloudFront Distribution
           
             <i class="fas fa-check read-icon"></i>
           
@@ -214,7 +214,11 @@
         <ul>
           
               <li> 
-                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj/"><i class='fab fa-facebook'></i> AWS Study Group</a>
+                  <a class="padding" href="https://aws.amazon.com/blogs"><i class='fab fa-aws'></i> AWS Study Group - Blog</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj"><i class='fab fa-facebook'></i> AWS Study Group - FB Group</a>
               </li>
           
         </ul>
@@ -282,7 +286,7 @@
       <left>
     
      <b> Workshop</b> <br>
-    <img src="https://hitwebcounter.com/counter/counter.php?page=8147601&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=8420231&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
      <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
     <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
      
@@ -291,16 +295,16 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>07-03-2023</font></i>
-    </left>
-    <left>
-        <br>
-        <br>
-            <b> Team </b> <br>
+        <i><font color=orange>11-04-2023</font></i>
+</left>
+<left>
+    <br>
+    <br>
+    <b> Team </b> <br>
            
-            <i> <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>   
-        </i>
-        </left>
+    <i> <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>   
+    </i>
+</left>
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
@@ -335,25 +339,10 @@
 <p>The architecture of the web application will look like this:
 <img src="/images/serverless-diagram.png?featherlight=false&amp;width=50pc" alt="SeverlessExample"></p>
 <ul>
-<li>AWS Certificate Manager: manage SSL certificates</li>
-<li>Amazon Route 53: provide custom domain</li>
-<li>Amazon CloudFront: allows us to use SSL certificate to serve web with HTTPS</li>
+<li>Creating and management a SSL certificate with AWS Certificate Manager.</li>
+<li>Setting up a custom domain together with Route 53 DNS</li>
+<li>Creating a CloudFront CDN, linking it with our custom domain via Route 53, and securing the whole connection using an SSL certificate</li>
 </ul>
-<h4 id="aws-certificate-manager">AWS Certificate Manager</h4>
-<p>AWS Certificate Manager (ACM) handles the complexity of creating, storing, and renewing public and private SSL/TLS X.509 certificates and keys that protect your AWS websites and applications. You can provide certificates for your integrated AWS services either by issuing them directly with ACM or by importing third-party certificates into the ACM management system</p>
-<h4 id="amazon-route-53">Amazon Route 53</h4>
-<p>Amazon Route 53 is website service for Domain Name System (DNS) in the cloud. This service is highly available and scalable, disigned for developers and businessees, a reliable and cost-effective way of routing for end users as well as Internet applications by switching domains, such as <a href="https://www.example.com">www.example.com</a> to the IP address (192.0.2.1)</p>
-<p>Some feature of Amazon Route 53:</p>
-<ul>
-<li>Efficiently connect user requests to infrastructure running in AWS – like Amazon EC2 instances, Elastic Load Balancing load balancers, or Amazon S3 repositories</li>
-<li>Routing users to infrastructure outside of AWS</li>
-<li>Configure DNS health checks to route traffic to qualified endpoints</li>
-<li>Independently monitor the health of applications and endpoints</li>
-</ul>
-<p>One component that we&rsquo;ll be using for Route 53 is the Hosted zone - which is a container of records that defines how to route traffic to a domain of its subdomains.</p>
-<h4 id="amazon-cloudfront">Amazon CloudFront</h4>
-<p>Amazon CloudFront is a web service that speeds up distribution of your static and dynamic web content, such as .html, .css, .js, and image files, to your users. CloudFront delivers your content through a worldwide network of data centers called edge locations. When a user requests content that you&rsquo;re serving with CloudFront, the request is routed to the edge location that provides the lowest latency (time delay), so that content is delivered with the best possible performance.</p>
-<p>A simple approach for storing and delivering static content is to use an Amazon S3 bucket. Using S3 together with CloudFront has a number of advantages, including the option to use origin access control to easily restrict access to your S3 content.</p>
 <h4 id="content">Content</h4>
 <ol>
 <li><a href="1-preparation/">Preparation</a></li>
@@ -493,19 +482,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1678237448"></script>
-    <script src="/js/perfect-scrollbar.min.js?1678237448"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1678237448"></script>
-    <script src="/js/jquery.sticky.js?1678237448"></script>
-    <script src="/js/featherlight.min.js?1678237448"></script>
-    <script src="/js/highlight.pack.js?1678237448"></script>
+    <script src="/js/clipboard.min.js?1681206111"></script>
+    <script src="/js/perfect-scrollbar.min.js?1681206111"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1681206111"></script>
+    <script src="/js/jquery.sticky.js?1681206111"></script>
+    <script src="/js/featherlight.min.js?1681206111"></script>
+    <script src="/js/highlight.pack.js?1681206111"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1678237448"></script>
-    <script src="/js/learn.js?1678237448"></script>
-    <script src="/js/hugo-learn.js?1678237448"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1681206111"></script>
+    <script src="/js/learn.js?1681206111"></script>
+    <script src="/js/hugo-learn.js?1681206111"></script>
 
-    <link href="/mermaid/mermaid.css?1678237448" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1678237448"></script>
+    <link href="/mermaid/mermaid.css?1681206111" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1681206111"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

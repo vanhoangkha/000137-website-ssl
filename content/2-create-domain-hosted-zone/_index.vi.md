@@ -1,5 +1,5 @@
 ---
-title : "Tạo miền và Hosted zone"
+title : "Tạo Miền Và Hosted Zone"
 date :  "`r Sys.Date()`" 
 weight : 2
 chapter : false
@@ -18,66 +18,69 @@ Việc tạo miền sẽ tốn chi phí của bạn.
 
 ![CreateDomain](/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-1.png?featherlight=false&width=90pc)
 
-3. Nhập tên miền mà bạn muốn tạo, ví dụ: `fcjbookstore`
+3. Nhập tên miền mà bạn muốn tạo, ví dụ: `fcjdms`
 - Lựa chọn Top Level Domain phù hợp.
 - Ấn **Check** để kiểm tra xem tên miền có đang có sẵn không
 - Ấn **Add to cart**
+- Ấn **Continue** để tiếp tục
 
 ![CreateDomain](/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-2.png?featherlight=false&width=90pc)
 
 
-4. Ấn **Continue** để tiếp tục
+4. Nhập các thông tin các nhân của bạn, sau đó ấn **Continue** để tiếp tục.
 
 ![CreateDomain](/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-3.png?featherlight=false&width=90pc)
 
-5. Nhập các thông tin các nhân của bạn
+5. Chọn **Disable** để không tự động gia hạn tên miền sau khi nó hết hạn
+6. Tại mục **Terms and Conditions**, tích chọn đồng ý với các điều khoản
+7. Ấn **Complete Order**
 
 ![CreateDomain](/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-4.png?featherlight=false&width=90pc)
 
-6. Chọn **Disable** để không tự động gia hạn miền sau khi hết hạn
+8. Ấn **Close**
 
 ![CreateDomain](/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-5.png?featherlight=false&width=90pc)
 
-7. Tại mục **Terms and Conditions**, tích chọn đồng ý với các điều khoản
-- Mở email đã cung cấp ở phía trên, ấn vào đường dẫn để xác thực thông tin đăng ký miền từ **noreply@registrar.amazon.com**
-- Ấn **Complete Order**
+9. Ấn **Go To Domains**
 
 ![CreateDomain](/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-6.png?featherlight=false&width=90pc)
 
-8. Tích vào **I understand that my registered payment method will be used to pay for this operation**
-- Ấn **Complete Order**
-
-![CreateDomain](/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-7.png?featherlight=false&width=90pc)
-
-9. Ấn **Close**
-
-![CreateDomain](/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-8.png?featherlight=false&width=90pc)
-
 10. Sau đó, bạn sẽ thấy một miền đang được xử lý trong mục **Pending requests**
 
-![CreateDomain](/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-9.png?featherlight=false&width=90pc)
+![CreateDomain](/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-7.png?featherlight=false&width=90pc)
 
 11. Đợi một lúc, miền của bạn sẽ sẵn sàng để sử dụng
 - Ấn chọn **Registered domains** ở menu phía bên trái
 
+![CreateDomain](/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-8.png?featherlight=false&width=90pc)
+
+12. Ấn chọn **Hosted zones** ở menu phía bên trái, bạn sẽ thấy một hosted zone được tạo tự động. Chúng ta sẽ xoá và tự tạo một hosted zone mới.
+- Ấn **Create hosted zone**
+
+![CreateDomain](/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-9.png?featherlight=false&width=90pc)
+
+13. Nhập tên của miền đã đăng ký.
+- Nhập mô tả: `The hosted zone is used for FCJ Document Management System`
+- Ấn **Create hosted zone**
+
 ![CreateDomain](/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-10.png?featherlight=false&width=90pc)
-
-12. Sau khi miền được đăng ký thành công, chúng ta sẽ tạo một hosted zone
-- Ấn chọn **Hosted zones** ở menu phía bên trái
-- Ấn **Create hosted zone**
-
-![CreateDomain](/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-11.png?featherlight=false&width=90pc)
-
-13. Nhập tên của miền đã đăng ký
-- Chọn kiểu **Puclic hosted zone**
-- Ấn **Create hosted zone**
-
-![CreateDomain](/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-12.png?featherlight=false&width=90pc)
 
 {{% notice note %}}
 Nhập chính xác tên miền mà bạn đã đăng ký.
 {{% /notice %}}
 
-14. Chúng ta đã hoàn thành tạo một hosted zone, bước tiếp theo chúng ta sẽ yêu cầu một SSL certificate với AWS Certificate Manager
+14. Chúng ta đã hoàn thành tạo một hosted zone, sao chép tất cả Name Servers.
+
+![CreateDomain](/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-11.png?featherlight=false&width=90pc)
+
+15. Tiếp theo chúng ta sẽ cập nhật lại DNS của domain khớp với hosted zone
+16. Chọn **Resgisterd domains** ở menu bên trái và chọn domain vừa tạo.
+17. Ấn **Add or edit name servers**
+
+![CreateDomain](/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-12.png?featherlight=false&width=90pc)
+
+18. Dán Name Servers của hosted zone vào các ô. Sau đó ấn **Update**. 
 
 ![CreateDomain](/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-13.png?featherlight=false&width=90pc)
+
+19. Kiểm tra email mà bạn đã dùng để đăng ký domain, nếu nhận được mail xác nhận việc cập nhật là bạn đã cập nhật thành công.

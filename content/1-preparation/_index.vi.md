@@ -18,46 +18,45 @@ sam deploy --guided
 
 3. Nhập nội dung như sau:
 
-- Stack Name []: `fcj-book-store`
+- Stack Name []: `fcjdmsapp`
 - AWS Region []: `ap-southeast-1`
-- Confirm changes before deploy [Y/n]: y
-- Allow SAM CLI IAM role creation [Y/n]: y
-- Disable rollback [y/N]: n
-- BooksList may not have authorization defined, Is this okay? [y/N]: y
-- BookCreate may not have authorization defined, Is this okay? [y/N]: y
-- BookDelete may not have authorization defined, Is this okay? [y/N]: y
-Save arguments to configuration file [Y/n]: y
+- Confirm changes before deploy [Y/n]: `y`
+- Allow SAM CLI IAM role creation [Y/n]: `y`
+- Disable rollback [y/N]: `n`
+- DocsList may not have authorization defined, Is this okay? [y/N]: `y`
+- DocsUpload may not have authorization defined, Is this okay? [y/N]: `y`
+- DocsDelete may not have authorization defined, Is this okay? [y/N]: `y`
+- Save arguments to configuration file [Y/n]: `y`
 
 4. Mở bảng điều khiển của [AWS APIs Gateway](https://ap-southeast-1.console.aws.amazon.com/apigateway/main/apis?region=ap-southeast-1)
 
-![CreateUserPool](/images/1-preparation/1-preparation-1.png?featherlight=false&width=90pc)
-
 5. Ấn chọn **API Gateway REST API to Lambda**
 
-![CreateUserPool](/images/1-preparation/1-preparation-2.png?featherlight=false&width=90pc)
+![CreateUserPool](/images/1-preparation/1-preparation-1.png?featherlight=false&width=90pc)
 
 6. Ấn chọn **Stage** ở menu phía bên trái
 - Ấn chọn **staging**
 - Ghi lại **InvokeURL**
 
+![CreateUserPool](/images/1-preparation/1-preparation-2.png?featherlight=false&width=90pc)
+
+7. Nếu bạn chưa tải code của ứng dụng thì chạy command dưới đây:
+```
+git clone https://github.com/AWS-First-Cloud-Journey/
+FCJ-Serverless-DMS.git
+```
+- Mở tệp **src/constant.js**, thay giá trị của **APP_API_URL** bằng **InvokeURL**
+
 ![CreateUserPool](/images/1-preparation/1-preparation-3.png?featherlight=false&width=90pc)
-
-7. Thực hiện câu lệnh dưới đây để tải code **fcj-serverless-frontend** về máy của bạn
-```
-git clone https://github.com/AWS-First-Cloud-Journey/FCJ-Serverless-Workshop.git
-```
-- Mở tệp **config.js**, thay giá trị của **APP_API_URL** bằng **InvokeURL**
-
-![CreateUserPool](/images/1-preparation/1-preparation-4.png?featherlight=false&width=90pc)
 
 8. Thực hiện các câu lệnh dưới đây để build project
 ```
-cd fcj-serverless-frontend
+cd fcj-serverless-dms
 yarn build
 ```
 9. Chúng ta đã build xong front-end. Tiếp theo thực hiện câu lệnh sau để tải thư mục **build** lên S3 bucket
 ```
-aws s3 cp build s3://fcj-book-store --recursive
+aws s3 cp build s3://fcjdmswebstore --recursive
 ```
 
 Vậy là chúng ta đã tạo lại xong ứng dụng web.

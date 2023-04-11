@@ -1,5 +1,5 @@
 ---
-title : "Yêu cầu chứng chỉ SSL"
+title : "Yêu Cầu Chứng Chỉ SSL"
 date :  "`r Sys.Date()`" 
 weight : 3
 chapter : false
@@ -19,10 +19,10 @@ Vùng để tạo certificate bắt buộc là N.Virginia (us-east-1)
 
 ![DeployFunction](/images/3-request-certification/3-request-certification-2.png?featherlight=false&width=90pc)
 
-4. Nhập tên miền: `*.fcjbookstore.click`
-- Ấn **Ađ another name to this certificate**
-- Nhập tên miền khác: `fcjbookstore.click`
-- Ấn nút **Request**
+4. Nhập tên miền: `fcjdms.click`
+- Ấn **Add another name to this certificate**
+- Nhập tên miền khác: `*.fcjdms.click`
+- Kéo xuống cuối trang, ấn nút **Request**
 
 ![DeployFunction](/images/3-request-certification/3-request-certification-3.png?featherlight=false&width=90pc)
 

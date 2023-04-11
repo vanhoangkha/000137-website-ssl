@@ -3,30 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.101.0" />
+    <meta name="generator" content="Hugo 0.99.1" />
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Create Domain and Hosted zone :: AWS System Manager</title>
+    <title>Create Domain And Hosted Zone :: Serverless - Setting Up an S3 Static SSL Website</title>
 
     
-    <link href="/css/nucleus.css?1678237448" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1678237448" rel="stylesheet">
-    <link href="/css/hybrid.css?1678237448" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1678237448" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1678237448" rel="stylesheet">
-    <link href="/css/auto-complete.css?1678237448" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1678237448" rel="stylesheet">
-    <link href="/css/theme.css?1678237448" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1678237448" rel="stylesheet">
+    <link href="/css/nucleus.css?1681206111" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1681206111" rel="stylesheet">
+    <link href="/css/hybrid.css?1681206111" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1681206111" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1681206111" rel="stylesheet">
+    <link href="/css/auto-complete.css?1681206111" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1681206111" rel="stylesheet">
+    <link href="/css/theme.css?1681206111" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1681206111" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1678237448" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1681206111" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1678237448"></script>
+    <script src="/js/jquery-3.3.1.min.js?1681206111"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1678237448"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1678237448"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1681206111"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1681206111"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1678237448"></script>
+<script type="text/javascript" src="/js/search.js?1681206111"></script>
 
     
   </div>
@@ -108,13 +108,13 @@
  
   
     
-    <li data-nav-id="/2-create-domain-hosted-zone/" title="Create Domain and Hosted zone" class="dd-item 
-        
+    <li data-nav-id="/2-create-domain-hosted-zone/" title="Create Domain And Hosted Zone" class="dd-item 
+        parent
         active
         
         ">
       <a href="/2-create-domain-hosted-zone/">
-           <b> 2. </b> Create Domain and Hosted zone
+           <b> 2. </b> Create Domain And Hosted Zone
           
             <i class="fas fa-check read-icon"></i>
           
@@ -134,13 +134,13 @@
  
   
     
-    <li data-nav-id="/3-request-certification/" title="Request SSL certificate" class="dd-item 
+    <li data-nav-id="/3-request-certification/" title="Request SSL Certificate" class="dd-item 
         
         
         
         ">
       <a href="/3-request-certification/">
-           <b> 3. </b> Request SSL certificate
+           <b> 3. </b> Request SSL Certificate
           
             <i class="fas fa-check read-icon"></i>
           
@@ -160,13 +160,13 @@
  
   
     
-    <li data-nav-id="/4-create-cloud-front/" title="Create ClodFront distribution" class="dd-item 
+    <li data-nav-id="/4-create-cloud-front/" title="Create CloudFront Distribution" class="dd-item 
         
         
         
         ">
       <a href="/4-create-cloud-front/">
-           <b> 4. </b> Create ClodFront distribution
+           <b> 4. </b> Create CloudFront Distribution
           
             <i class="fas fa-check read-icon"></i>
           
@@ -214,7 +214,11 @@
         <ul>
           
               <li> 
-                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj/"><i class='fab fa-facebook'></i> AWS Study Group</a>
+                  <a class="padding" href="https://aws.amazon.com/blogs"><i class='fab fa-aws'></i> AWS Study Group - Blog</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj"><i class='fab fa-facebook'></i> AWS Study Group - FB Group</a>
               </li>
           
         </ul>
@@ -282,7 +286,7 @@
       <left>
     
      <b> Workshop</b> <br>
-    <img src="https://hitwebcounter.com/counter/counter.php?page=8147601&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=8420231&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
      <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
     <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
      
@@ -291,16 +295,16 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>07-03-2023</font></i>
-    </left>
-    <left>
-        <br>
-        <br>
-            <b> Team </b> <br>
+        <i><font color=orange>11-04-2023</font></i>
+</left>
+<left>
+    <br>
+    <br>
+    <b> Team </b> <br>
            
-            <i> <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>   
-        </i>
-        </left>
+    <i> <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>   
+    </i>
+</left>
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
@@ -338,7 +342,7 @@
             
           
           
-            <a href='/'>Serverless - Set Up An S3 Static SSL Website</a> > Create Domain and Hosted zone
+            <a href='/'>Serverless - Set Up An S3 Static SSL Website</a> > Create Domain And Hosted Zone
           
         
           
@@ -365,7 +369,7 @@
           
             <h1>
               
-              Create Domain and Hosted zone
+              Create Domain And Hosted Zone
             </h1>
           
 
@@ -391,72 +395,59 @@
 </ul>
 <p><img src="/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-1.png?featherlight=false&amp;width=90pc" alt="CreateDomain"></p>
 <ol start="3">
-<li>Enter the domain name you want to create, ví dụ: <code>fcjbookstore</code></li>
+<li>Enter the domain name you want to create, ví dụ: <code>fcjdms</code></li>
 </ol>
 <ul>
 <li>Select the appropriate Top Level Domain</li>
 <li>Click <strong>Check</strong> to check the domain name is available</li>
 <li>Click <strong>Add to cart</strong></li>
+<li>Click <strong>Continue</strong></li>
 </ul>
 <p><img src="/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-2.png?featherlight=false&amp;width=90pc" alt="CreateDomain"></p>
 <ol start="4">
-<li>Click <strong>Continue</strong></li>
+<li>Enter your personal information, then click <strong>Continue</strong> to continue.</li>
 </ol>
 <p><img src="/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-3.png?featherlight=false&amp;width=90pc" alt="CreateDomain"></p>
 <ol start="5">
-<li>Enter your personal information</li>
+<li>Click <strong>Disable</strong> to not automatically renew the domain after it expires</li>
+<li>At <strong>Terms and Conditions</strong> section, check to agree to the terms</li>
+<li>Click <strong>Complete Order</strong></li>
 </ol>
 <p><img src="/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-4.png?featherlight=false&amp;width=90pc" alt="CreateDomain"></p>
-<ol start="6">
-<li>Click <strong>Disable</strong> to not automatically renew the domain after it expires</li>
-</ol>
-<p><img src="/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-5.png?featherlight=false&amp;width=90pc" alt="CreateDomain"></p>
-<ol start="7">
-<li>At <strong>Terms and Conditions</strong> section, check to agree to the terms</li>
-</ol>
-<ul>
-<li>Open your email provied above, click to link to verify the domain registration information from <strong><a href="mailto:noreply@registrar.amazon.com">noreply@registrar.amazon.com</a></strong></li>
-<li>Click <strong>Complete Order</strong></li>
-</ul>
-<p><img src="/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-6.png?featherlight=false&amp;width=90pc" alt="CreateDomain"></p>
 <ol start="8">
-<li>Check to <strong>I understand that my registered payment method will be used to pay for this operation</strong></li>
-</ol>
-<ul>
-<li>Click <strong>Complete Order</strong></li>
-</ul>
-<p><img src="/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-7.png?featherlight=false&amp;width=90pc" alt="CreateDomain"></p>
-<ol start="9">
 <li>Click <strong>Close</strong></li>
 </ol>
-<p><img src="/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-8.png?featherlight=false&amp;width=90pc" alt="CreateDomain"></p>
+<p><img src="/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-5.png?featherlight=false&amp;width=90pc" alt="CreateDomain"></p>
+<ol start="9">
+<li>Click <strong>Go To Domains</strong></li>
+</ol>
+<p><img src="/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-6.png?featherlight=false&amp;width=90pc" alt="CreateDomain"></p>
 <ol start="10">
 <li>Then, you will see a domain being processed under <strong>Pending requests</strong></li>
 </ol>
-<p><img src="/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-9.png?featherlight=false&amp;width=90pc" alt="CreateDomain"></p>
+<p><img src="/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-7.png?featherlight=false&amp;width=90pc" alt="CreateDomain"></p>
 <ol start="11">
 <li>Wait for a while, your domain will be ready to use</li>
 </ol>
 <ul>
 <li>Select <strong>Registered domains</strong> on the left menu</li>
 </ul>
-<p><img src="/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-10.png?featherlight=false&amp;width=90pc" alt="CreateDomain"></p>
+<p><img src="/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-8.png?featherlight=false&amp;width=90pc" alt="CreateDomain"></p>
 <ol start="12">
-<li>After the domain is registered successfully, we will create a hosted zone</li>
+<li>Select <strong>Hosted zones</strong> on the left menu, you will see a hosted zone automatically created. We will delete and manually create a new hosted zone.</li>
 </ol>
 <ul>
-<li>Select <strong>Hosted zones</strong> on the left menu</li>
 <li>Click <strong>Create hosted zone</strong></li>
 </ul>
-<p><img src="/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-11.png?featherlight=false&amp;width=90pc" alt="CreateDomain"></p>
+<p><img src="/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-9.png?featherlight=false&amp;width=90pc" alt="CreateDomain"></p>
 <ol start="13">
 <li>Enter domain name you registered</li>
 </ol>
 <ul>
-<li>Select <strong>Puclic hosted zone</strong> type</li>
+<li>Enter description: <code>The hosted zone is used for FCJ Document Management System</code></li>
 <li>Click <strong>Create hosted zone</strong></li>
 </ul>
-<p><img src="/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-12.png?featherlight=false&amp;width=90pc" alt="CreateDomain"></p>
+<p><img src="/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-10.png?featherlight=false&amp;width=90pc" alt="CreateDomain"></p>
 
 <div class="notices note" ><p>Enter the exact domain name you registered</p>
 </div>
@@ -464,7 +455,20 @@
 <ol start="14">
 <li>We are done creating a hosted name, next step we will request a SSL certificate with AWS Certificate Manager</li>
 </ol>
+<p><img src="/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-11.png?featherlight=false&amp;width=90pc" alt="CreateDomain"></p>
+<ol start="15">
+<li>Next, we will update the DNS of the domain to match the hosted zone</li>
+<li>Select <strong>Resgisterd domains</strong> on the left menu and select the domain you just created.</li>
+<li>Click <strong>Add or edit name servers</strong></li>
+</ol>
+<p><img src="/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-12.png?featherlight=false&amp;width=90pc" alt="CreateDomain"></p>
+<ol start="18">
+<li>Paste the Name Servers of the hosted zone into the cells. Then press <strong>Update</strong>.</li>
+</ol>
 <p><img src="/images/2-create-domain-hosted-zone/2-create-domain-hosted-zone-13.png?featherlight=false&amp;width=90pc" alt="CreateDomain"></p>
+<ol start="19">
+<li>Check the email you used to register the domain, if you receive an update confirmation email, you have successfully updated.</li>
+</ol>
 
 
 
@@ -599,7 +603,7 @@
 			<a class="nav nav-prev" href="/1-preparation/" title="Preparation"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/3-request-certification/" title="Request SSL certificate" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/3-request-certification/" title="Request SSL Certificate" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -609,19 +613,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1678237448"></script>
-    <script src="/js/perfect-scrollbar.min.js?1678237448"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1678237448"></script>
-    <script src="/js/jquery.sticky.js?1678237448"></script>
-    <script src="/js/featherlight.min.js?1678237448"></script>
-    <script src="/js/highlight.pack.js?1678237448"></script>
+    <script src="/js/clipboard.min.js?1681206111"></script>
+    <script src="/js/perfect-scrollbar.min.js?1681206111"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1681206111"></script>
+    <script src="/js/jquery.sticky.js?1681206111"></script>
+    <script src="/js/featherlight.min.js?1681206111"></script>
+    <script src="/js/highlight.pack.js?1681206111"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1678237448"></script>
-    <script src="/js/learn.js?1678237448"></script>
-    <script src="/js/hugo-learn.js?1678237448"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1681206111"></script>
+    <script src="/js/learn.js?1681206111"></script>
+    <script src="/js/hugo-learn.js?1681206111"></script>
 
-    <link href="/mermaid/mermaid.css?1678237448" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1678237448"></script>
+    <link href="/mermaid/mermaid.css?1681206111" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1681206111"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

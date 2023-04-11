@@ -1,5 +1,5 @@
 ---
-title : "Request SSL certificate"
+title : "Request SSL Certificate"
 date :  "`r Sys.Date()`" 
 weight : 3
 chapter : false
@@ -19,10 +19,10 @@ The required region to generate the certificate is N.Virginia (us-east-1)
 
 ![DeployFunction](/images/3-request-certification/3-request-certification-2.png?featherlight=false&width=90pc)
 
-4. Enter the domain name: `*.fcjbookstore.click`
-- Click **Ađ another name to this certificate**
-- Enter another domain name: `fcjbookstore.click`
-- Click **Request** button
+4. Enter the domain name: `fcjdms.click`
+- Click **Add another name to this certificate**
+- Enter another domain name: `*.fcjdms.click`
+- Scroll down to bottom, click **Request** button
 
 ![DeployFunction](/images/3-request-certification/3-request-certification-3.png?featherlight=false&width=90pc)
 

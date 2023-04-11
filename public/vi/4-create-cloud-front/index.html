@@ -3,30 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.101.0" />
+    <meta name="generator" content="Hugo 0.99.1" />
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Tạo ClodFront distribution :: AWS System Manager</title>
+    <title>Tạo CloudFront Distribution :: Serverless - Setting Up an S3 Static SSL Website</title>
 
     
-    <link href="/css/nucleus.css?1678237448" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1678237448" rel="stylesheet">
-    <link href="/css/hybrid.css?1678237448" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1678237448" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1678237448" rel="stylesheet">
-    <link href="/css/auto-complete.css?1678237448" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1678237448" rel="stylesheet">
-    <link href="/css/theme.css?1678237448" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1678237448" rel="stylesheet">
+    <link href="/css/nucleus.css?1681206111" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1681206111" rel="stylesheet">
+    <link href="/css/hybrid.css?1681206111" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1681206111" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1681206111" rel="stylesheet">
+    <link href="/css/auto-complete.css?1681206111" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1681206111" rel="stylesheet">
+    <link href="/css/theme.css?1681206111" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1681206111" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1678237448" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1681206111" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1678237448"></script>
+    <script src="/js/jquery-3.3.1.min.js?1681206111"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1678237448"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1678237448"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1681206111"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1681206111"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1678237448"></script>
+<script type="text/javascript" src="/js/search.js?1681206111"></script>
 
     
   </div>
@@ -108,13 +108,13 @@
  
   
     
-    <li data-nav-id="/vi/2-create-domain-hosted-zone/" title="Tạo miền và Hosted zone" class="dd-item 
+    <li data-nav-id="/vi/2-create-domain-hosted-zone/" title="Tạo Miền Và Hosted Zone" class="dd-item 
         
         
         
         ">
       <a href="/vi/2-create-domain-hosted-zone/">
-           <b> 2. </b> Tạo miền và Hosted zone
+           <b> 2. </b> Tạo Miền Và Hosted Zone
           
             <i class="fas fa-check read-icon"></i>
           
@@ -134,13 +134,13 @@
  
   
     
-    <li data-nav-id="/vi/3-request-certification/" title="Yêu cầu chứng chỉ SSL" class="dd-item 
+    <li data-nav-id="/vi/3-request-certification/" title="Yêu Cầu Chứng Chỉ SSL" class="dd-item 
         
         
         
         ">
       <a href="/vi/3-request-certification/">
-           <b> 3. </b> Yêu cầu chứng chỉ SSL
+           <b> 3. </b> Yêu Cầu Chứng Chỉ SSL
           
             <i class="fas fa-check read-icon"></i>
           
@@ -160,13 +160,13 @@
  
   
     
-    <li data-nav-id="/vi/4-create-cloud-front/" title="Tạo ClodFront distribution" class="dd-item 
-        
+    <li data-nav-id="/vi/4-create-cloud-front/" title="Tạo CloudFront Distribution" class="dd-item 
+        parent
         active
         
         ">
       <a href="/vi/4-create-cloud-front/">
-           <b> 4. </b> Tạo ClodFront distribution
+           <b> 4. </b> Tạo CloudFront Distribution
           
             <i class="fas fa-check read-icon"></i>
           
@@ -186,13 +186,13 @@
  
   
     
-    <li data-nav-id="/vi/5-cleanup/" title="Dọn dẹp tài nguyên" class="dd-item 
+    <li data-nav-id="/vi/5-cleanup/" title="Dọn Dẹp Tài Nguyên" class="dd-item 
         
         
         
         ">
       <a href="/vi/5-cleanup/">
-           <b> 5. </b> Dọn dẹp tài nguyên
+           <b> 5. </b> Dọn Dẹp Tài Nguyên
           
             <i class="fas fa-check read-icon"></i>
           
@@ -214,7 +214,11 @@
         <ul>
           
               <li> 
-                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj/"><i class='fab fa-facebook'></i> AWS Study Group</a>
+                  <a class="padding" href="http://awsstudygroup.com"><i class='fab fa-aws'></i> AWS Study Group - Blog</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj"><i class='fab fa-facebook'></i> AWS Study Group - Nhóm FB</a>
               </li>
           
         </ul>
@@ -282,7 +286,7 @@
       <left>
     
      <b> Workshop</b> <br>
-    <img src="https://hitwebcounter.com/counter/counter.php?page=8147601&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=8420231&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
      <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
     <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
      
@@ -291,16 +295,16 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>07-03-2023</font></i>
-    </left>
-    <left>
-        <br>
-        <br>
-            <b> Team </b> <br>
+        <i><font color=orange>11-04-2023</font></i>
+</left>
+<left>
+    <br>
+    <br>
+    <b> Team </b> <br>
            
-            <i> <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>   
-        </i>
-        </left>
+    <i> <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>   
+    </i>
+</left>
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
@@ -338,7 +342,7 @@
             
           
           
-            <a href='/vi/'>Serverless - Thiết lập trang web SSL S3 Static</a> > Tạo ClodFront distribution
+            <a href='/vi/'>Serverless - Thiết lập trang web SSL S3 Static</a> > Tạo CloudFront Distribution
           
         
           
@@ -365,7 +369,7 @@
           
             <h1>
               
-              Tạo ClodFront distribution
+              Tạo CloudFront Distribution
             </h1>
           
 
@@ -374,91 +378,70 @@
 
 
 	<ol>
-<li>Mở bảng điều khiển của <a href="https://us-east-1.console.aws.amazon.com/cloudfront/v3/home?region=ap-southeast-1#/distributions">Amazon CloudFront</a></li>
+<li>Mở bảng điều khiển của <a href="https://us-east-1.console.aws.amazon.com/cloudfront/v3/home?region=ap-southeast-1#/">Amazon CloudFront</a></li>
+<li>Ấn <strong>Create a CloudFront distribution</strong></li>
 </ol>
 <p><img src="/images/4-create-cloud-front/4-create-cloud-front-1.png?featherlight=false&amp;width=90pc" alt="CreateDistribution"></p>
-<ol start="2">
-<li>Ấn <strong>Create distribution</strong></li>
+<ol start="3">
+<li>Chọn origin domain là S3 bucket <strong>fcjdmswebstore</strong>, sau đó ấn <strong>Use website endpoint</strong></li>
 </ol>
 <p><img src="/images/4-create-cloud-front/4-create-cloud-front-2.png?featherlight=false&amp;width=90pc" alt="CreateDistribution"></p>
-<ol start="3">
-<li>Chọn origin domain là S3 bucket <strong>fcj-book-store</strong></li>
+<ol start="4">
+<li>Kéo xuống dưới, tại phần <strong>Default cache behavior</strong> chọn <strong>Redirect HTTP to HTTPS</strong> cho <strong>Viewer protocol policy</strong></li>
+<li>Chọn <strong>CORS-S3Origin</strong> cho mục <strong>Origin request policy</strong></li>
 </ol>
 <p><img src="/images/4-create-cloud-front/4-create-cloud-front-3.png?featherlight=false&amp;width=90pc" alt="CreateDistribution"></p>
-<ol start="4">
-<li>Chọn <strong>Legacy access identities</strong> để chỉ cho phép truy cập vào S3 bucket từ CloudFront</li>
-</ol>
-<ul>
-<li>Ấn <strong>Create new OAI</strong></li>
-</ul>
-<p><img src="/images/4-create-cloud-front/4-create-cloud-front-4.png?featherlight=false&amp;width=90pc" alt="CreateDistribution"></p>
-<ul>
-<li>Ấn <strong>Create</strong></li>
-</ul>
-<p><img src="/images/4-create-cloud-front/4-create-cloud-front-5.png?featherlight=false&amp;width=90pc" alt="CreateDistribution"></p>
-<ul>
-<li>Chọn OAI bạn vừa tạo</li>
-<li>Chọn <strong>Yes, update the bucket policy</strong></li>
-</ul>
-<p><img src="/images/4-create-cloud-front/4-create-cloud-front-4-1.png?featherlight=false&amp;width=90pc" alt="CreateDistribution"></p>
-<ol start="5">
-<li>Kéo xuống dưới, tại phần <strong>Default cache behavior</strong> chọn <strong>Redirect HTTP to HTTPS</strong> cho <strong>Viewer protocol policy</strong></li>
-</ol>
-<p><img src="/images/4-create-cloud-front/4-create-cloud-front-6.png?featherlight=false&amp;width=90pc" alt="CreateDistribution"></p>
 <ol start="6">
 <li>Kéo xuống dưới, tại phần <strong>Settings</strong>, ấn <strong>Add item</strong></li>
 </ol>
 <ul>
-<li>Nhập CNAME: <code>www.fcjbookstore.click</code> và <code>fcjbookstore.click</code></li>
+<li>Nhập CNAME: <code>www.fcjdms.click</code> và <code>fcjdms.click</code></li>
 <li>Chọn SSL certificate vừa tạo ở phần trước</li>
 </ul>
-<p><img src="/images/4-create-cloud-front/4-create-cloud-front-7.png?featherlight=false&amp;width=90pc" alt="CreateDistribution"></p>
+<p><img src="/images/4-create-cloud-front/4-create-cloud-front-4.png?featherlight=false&amp;width=90pc" alt="CreateDistribution"></p>
 <ol start="7">
 <li>Kéo xuống cuối trang, nhập <strong>index.html</strong> cho mục <strong>Default root object</strong></li>
 </ol>
 <ul>
 <li>Ấn <strong>Create distribution</strong></li>
 </ul>
-<p><img src="/images/4-create-cloud-front/4-create-cloud-front-8.png?featherlight=false&amp;width=90pc" alt="CreateDistribution"></p>
+<p><img src="/images/4-create-cloud-front/4-create-cloud-front-5.png?featherlight=false&amp;width=90pc" alt="CreateDistribution"></p>
 <ol start="8">
 <li>Quay trở lại với bảng điều khiển của Route 53</li>
 </ol>
 <ul>
+<li>Chọn <strong>Hosted zone</strong> ở menu phía bên trái và chọn hosted zone đã tạo.</li>
 <li>Ấn <strong>Create record</strong></li>
 </ul>
-<p><img src="/images/4-create-cloud-front/4-create-cloud-front-9.png?featherlight=false&amp;width=90pc" alt="CreateRecord"></p>
+<p><img src="/images/4-create-cloud-front/4-create-cloud-front-6.png?featherlight=false&amp;width=90pc" alt="CreateRecord"></p>
 <ol start="9">
-<li>Nhập <code>www</code> cho <strong>Record name</strong></li>
-</ol>
-<ul>
 <li>Bật <strong>Alias</strong></li>
 <li>Chọn <strong>Alias to CloudFront distribution</strong></li>
-</ul>
-<p><img src="/images/4-create-cloud-front/4-create-cloud-front-10.png?featherlight=false&amp;width=90pc" alt="CreateRecord"></p>
-<ol start="10">
-<li>Chọn CloudFront distribution vừa tạo</li>
 </ol>
 <ul>
-<li>Ấn <strong>Create records</strong>
-<img src="/images/4-create-cloud-front/4-create-cloud-front-11.png?featherlight=false&amp;width=90pc" alt="CreateRecord"></li>
+<li>Chọn CloudFront distribution vừa tạo</li>
+<li>Ấn <strong>Add another record</strong></li>
 </ul>
+<p><img src="/images/4-create-cloud-front/4-create-cloud-front-7.png?featherlight=false&amp;width=90pc" alt="CreateRecord"></p>
 <ol start="11">
-<li>Ấn <strong>Create record</strong></li>
-</ol>
-<p><img src="/images/4-create-cloud-front/4-create-cloud-front-12.png?featherlight=false&amp;width=90pc" alt="CreateRecord"></p>
-<ol start="12">
-<li>Bật <strong>Alias</strong></li>
+<li>Nhập <code>www</code> cho tên của record.</li>
 </ol>
 <ul>
+<li>Bật <strong>Alias</strong></li>
 <li>Chọn <strong>Alias to CloudFront distribution</strong></li>
 <li>Chọn CloudFront distribution vừa tạo</li>
-<li>Ấn <strong>Create records</strong></li>
+<li>Ấn <strong>Create record</strong></li>
 </ul>
-<p><img src="/images/4-create-cloud-front/4-create-cloud-front-13.png?featherlight=false&amp;width=90pc" alt="CreateRecord"></p>
-<ol start="13">
-<li>Nhập các đường dẫn sau vào một tab mới trong trình duyệt web của bạn: <code>http://DOMAIN</code>, <code>http://www.DOMAIN</code>, thay toàn bộ <strong>DOMAIN</strong> bằng tên domain của bạn. Tất cả các đường dẫn đó đều chuyển hướng đến đường dẫn mới, thay http bằng https</li>
+<p><img src="/images/4-create-cloud-front/4-create-cloud-front-8.png?featherlight=false&amp;width=90pc" alt="CreateRecord"></p>
+<ol start="12">
+<li>Bạn đã tạo xong record cho CloudFront distribution</li>
 </ol>
-<p><img src="/images/4-create-cloud-front/4-create-cloud-front-14.png?featherlight=false&amp;width=90pc" alt="CreateRecord"></p>
+<p><img src="/images/4-create-cloud-front/4-create-cloud-front-9.png?featherlight=false&amp;width=90pc" alt="CreateRecord"></p>
+<ol start="13">
+<li>Nhập các đường dẫn sau vào một tab mới trong trình duyệt web của bạn: <code>http://DOMAIN</code>, <code>http://www.DOMAIN</code>, thay toàn bộ <code>DOMAIN</code> bằng tên domain của bạn. Tất cả các đường dẫn đó đều chuyển hướng đến đường dẫn mới, thay http bằng https</li>
+</ol>
+<p><img src="/images/4-create-cloud-front/4-create-cloud-front-10.png?featherlight=false&amp;width=90pc" alt="CreateRecord"></p>
+<p>Bạn đã hoàn thành xong workshop giúp ứng dụng bảo mật hơn. Bài tiếp theo chúng ta sẽ cùng nhau triển khai tính năng tìm kiếm với Amazon OpenSearch Service cho ứng dụng.</p>
 
 
 
@@ -590,10 +573,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/vi/3-request-certification/" title="Yêu cầu chứng chỉ SSL"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/vi/3-request-certification/" title="Yêu Cầu Chứng Chỉ SSL"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/vi/5-cleanup/" title="Dọn dẹp tài nguyên" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/vi/5-cleanup/" title="Dọn Dẹp Tài Nguyên" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -603,19 +586,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1678237448"></script>
-    <script src="/js/perfect-scrollbar.min.js?1678237448"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1678237448"></script>
-    <script src="/js/jquery.sticky.js?1678237448"></script>
-    <script src="/js/featherlight.min.js?1678237448"></script>
-    <script src="/js/highlight.pack.js?1678237448"></script>
+    <script src="/js/clipboard.min.js?1681206111"></script>
+    <script src="/js/perfect-scrollbar.min.js?1681206111"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1681206111"></script>
+    <script src="/js/jquery.sticky.js?1681206111"></script>
+    <script src="/js/featherlight.min.js?1681206111"></script>
+    <script src="/js/highlight.pack.js?1681206111"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1678237448"></script>
-    <script src="/js/learn.js?1678237448"></script>
-    <script src="/js/hugo-learn.js?1678237448"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1681206111"></script>
+    <script src="/js/learn.js?1681206111"></script>
+    <script src="/js/hugo-learn.js?1681206111"></script>
 
-    <link href="/mermaid/mermaid.css?1678237448" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1678237448"></script>
+    <link href="/mermaid/mermaid.css?1681206111" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1681206111"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

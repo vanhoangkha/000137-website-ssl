@@ -7,7 +7,7 @@ pre : " <b> 5. </b> "
 ---
 1. Empty S3 bucket
 - Open [AWS S3 console](https://s3.console.aws.amazon.com/s3/buckets?region=ap-southeast-1)
-- Select **fcj-book-store**
+- Select **fcjdmswebstore**
 - Click **Empty**
 - Enter **permanently delete**
 - Click **Empty**
@@ -15,7 +15,7 @@ pre : " <b> 5. </b> "
 2. Delete CloudFormation stacks
 - Execute the below command to delete the AWS SAM application
 ```
-sam delete --stack-name fcj-book-store
+sam delete --stack-name fcjdmsapp
 sam delete --stack-name aws-sam-cli-managed-default
 ```
 3. Delete CloudFront distribution

@@ -18,42 +18,44 @@ sam deploy --guided
 
 3. Enter the following content:
 
-- Stack Name []: `fcj-book-store`
+- Stack Name []: `fcjdmsapp`
 - AWS Region []: `ap-southeast-1`
-- Confirm changes before deploy [Y/n]: y
-- Allow SAM CLI IAM role creation [Y/n]: y
-- Disable rollback [y/N]: n
-- BooksList may not have authorization defined, Is this okay? [y/N]: y
-- BookCreate may not have authorization defined, Is this okay? [y/N]: y
-- BookDelete may not have authorization defined, Is this okay? [y/N]: y
-- Save arguments to configuration file [Y/n]: y
+- Confirm changes before deploy [Y/n]: `y`
+- Allow SAM CLI IAM role creation [Y/n]: `y`
+- Disable rollback [y/N]: `n`
+- BooksList may not have authorization defined, Is this okay? [y/N]: `y`
+- BookCreate may not have authorization defined, Is this okay? [y/N]: `y`
+- BookDelete may not have authorization defined, Is this okay? [y/N]: `y`
+- Save arguments to configuration file [Y/n]: `y`
 
 4. Open [AWS APIs Gateway console](https://ap-southeast-1.console.aws.amazon.com/apigateway/main/apis?region=ap-southeast-1)
 
-![CreateUserPool](/images/1-preparation/1-preparation-1.png?featherlight=false&width=90pc)
-
 5. Click **API Gateway REST API to Lambda**
 
-![CreateUserPool](/images/1-preparation/1-preparation-2.png?featherlight=false&width=90pc)
+![CreateUserPool](/images/1-preparation/1-preparation-1.png?featherlight=false&width=90pc)
 
 6. Click **Stage** on the left menu
 - Click **staging**
 - Record the **InvokeURL**
 
-![CreateUserPool](/images/1-preparation/1-preparation-3.png?featherlight=false&width=90pc)
+![CreateUserPool](/images/1-preparation/1-preparation-2.png?featherlight=false&width=90pc)
 
-7. Run the below command to download the source code of **fcj-serverless-frontend** to your device
+7. If you have not downloaded the application code, run the command below:
 ```
 git clone https://github.com/AWS-First-Cloud-Journey/FCJ-Serverless-Workshop.git
 ```
+- Open the **src/constant.js** file, replace the value of **APP_API_URL** with **InvokeURL**
+
+![CreateUserPool](/images/1-preparation/1-preparation-3.png?featherlight=false&width=90pc)
+
 8. Run the below commands to build project
 ```
-cd fcj-serverless-frontend
+cd fcj-serverless-dms
 yarn build
 ```
 9. We have finished building the front-end. Next, run the below command to upload **build** folder to S3 bucket
 ```
-aws s3 cp build s3://fcj-book-store --recursive
+aws s3 cp build s3://fcjdmswebstore --recursive
 ```
 
 So we have rebuilt the web application.
