@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.99.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Dọn Dẹp Tài Nguyên :: Serverless - Setting Up an S3 Static SSL Website</title>
 
     
-    <link href="/css/nucleus.css?1681213551" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1681213551" rel="stylesheet">
-    <link href="/css/hybrid.css?1681213551" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1681213551" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1681213551" rel="stylesheet">
-    <link href="/css/auto-complete.css?1681213551" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1681213551" rel="stylesheet">
-    <link href="/css/theme.css?1681213551" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1681213551" rel="stylesheet">
+    <link href="/css/nucleus.css?1682482681" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1682482681" rel="stylesheet">
+    <link href="/css/hybrid.css?1682482681" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1682482681" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1682482681" rel="stylesheet">
+    <link href="/css/auto-complete.css?1682482681" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1682482681" rel="stylesheet">
+    <link href="/css/theme.css?1682482681" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1682482681" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1681213551" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1682482681" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1681213551"></script>
+    <script src="/js/jquery-3.3.1.min.js?1682482681"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1681213551"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1681213551"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1682482681"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1682482681"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1681213551"></script>
+<script type="text/javascript" src="/js/search.js?1682482681"></script>
 
     
   </div>
@@ -187,7 +187,7 @@
   
     
     <li data-nav-id="/vi/5-cleanup/" title="Dọn Dẹp Tài Nguyên" class="dd-item 
-        parent
+        
         active
         
         ">
@@ -381,22 +381,28 @@
 <li>Làm rỗng S3 bucket</li>
 </ol>
 <ul>
-<li>Mở bảng điều khiển của <a href="https://s3.console.aws.amazon.com/s3/buckets?region=ap-southeast-1">AWS S3</a></li>
-<li>Chọn <strong>fcjdmswebstore</strong></li>
-<li>Ấn <strong>Empty</strong></li>
-<li>Nhập <strong>permanently delete</strong></li>
-<li>Ấn <strong>Empty</strong></li>
-<li>Làm tương tự với bucket bắt đầu bằng <strong>aws-sam-cli-managed-default-</strong></li>
+<li>Chạy câu lệnh sau: <code>aws s3 rm s3://BUCKET_NAME --recursive</code></li>
+<li>Thay thế <code>BUCKET_NAME</code> bằng tên bucket cần làm rỗng: <code>fcjdmswebstore</code>, <code>fcjdmsstore</code></li>
 </ul>
 <ol start="2">
 <li>Xoá stack của CloudFormation</li>
 </ol>
 <ul>
-<li>Chạy câu lệnh dưới đây để xoá ứng dụng AWS SAM</li>
+<li>Chạy câu lệnh dưới đây để xoá ứng dụng AWS SAM: <code>sam delete --stack-name fcjdmsapp</code></li>
+<li>Chạy câu lệnh sau để làm rỗng S3 bucket: <code>aws s3 rm s3://BUCKET_NAME --recursive</code></li>
+<li>Thay thế <code>BUCKET_NAME</code> bằng tên bucket bắt đầu bằng: <strong>aws-sam-cli-managed-default-samclisourcebucket-</strong></li>
+<li>Mở bảng điều khiển của <a href="https://ap-southeast-1.console.aws.amazon.com/s3/buckets?region=ap-southeast-1">Amazon S3</a></li>
+<li>Chọn bucket bắt đầu bằng <strong>aws-sam-cli-managed-default-samclisourcebucket-</strong></li>
+<li>Ấn <strong>Show versions</strong></li>
+<li>Chọn thư mục <strong>fcjdmsapp</strong></li>
+<li>Chọn tất cả các object</li>
+<li>Ấn <strong>Delete</strong></li>
+<li>Nhập <code>permanently delete</code></li>
+<li>Ấn <strong>Delete</strong></li>
+<li>Chạy câu lệnh sau để xoá stack:
+<code>sam delete --stack-name aws-sam-cli-managed-default</code></li>
 </ul>
-<pre tabindex="0"><code>sam delete --stack-name fcjdmsapp
-sam delete --stack-name aws-sam-cli-managed-default
-</code></pre><ol start="3">
+<ol start="3">
 <li>Xoá CloudFront distribution</li>
 </ol>
 <ul>
@@ -571,19 +577,19 @@ sam delete --stack-name aws-sam-cli-managed-default
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1681213551"></script>
-    <script src="/js/perfect-scrollbar.min.js?1681213551"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1681213551"></script>
-    <script src="/js/jquery.sticky.js?1681213551"></script>
-    <script src="/js/featherlight.min.js?1681213551"></script>
-    <script src="/js/highlight.pack.js?1681213551"></script>
+    <script src="/js/clipboard.min.js?1682482681"></script>
+    <script src="/js/perfect-scrollbar.min.js?1682482681"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1682482681"></script>
+    <script src="/js/jquery.sticky.js?1682482681"></script>
+    <script src="/js/featherlight.min.js?1682482681"></script>
+    <script src="/js/highlight.pack.js?1682482681"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1681213551"></script>
-    <script src="/js/learn.js?1681213551"></script>
-    <script src="/js/hugo-learn.js?1681213551"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1682482681"></script>
+    <script src="/js/learn.js?1682482681"></script>
+    <script src="/js/hugo-learn.js?1682482681"></script>
 
-    <link href="/mermaid/mermaid.css?1681213551" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1681213551"></script>
+    <link href="/mermaid/mermaid.css?1682482681" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1682482681"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

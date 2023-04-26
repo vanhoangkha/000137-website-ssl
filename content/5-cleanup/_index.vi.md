@@ -6,18 +6,22 @@ chapter : false
 pre : " <b> 5. </b> "
 ---
 1. Làm rỗng S3 bucket
-- Mở bảng điều khiển của [AWS S3](https://s3.console.aws.amazon.com/s3/buckets?region=ap-southeast-1)
-- Chọn **fcjdmswebstore**
-- Ấn **Empty**
-- Nhập **permanently delete**
-- Ấn **Empty**
-- Làm tương tự với bucket bắt đầu bằng **aws-sam-cli-managed-default-**
+- Chạy câu lệnh sau: `aws s3 rm s3://BUCKET_NAME --recursive`
+- Thay thế `BUCKET_NAME` bằng tên bucket cần làm rỗng: `fcjdmswebstore`, `fcjdmsstore`
 2. Xoá stack của CloudFormation
-- Chạy câu lệnh dưới đây để xoá ứng dụng AWS SAM
-```
-sam delete --stack-name fcjdmsapp
-sam delete --stack-name aws-sam-cli-managed-default
-```
+- Chạy câu lệnh dưới đây để xoá ứng dụng AWS SAM: `sam delete --stack-name fcjdmsapp`
+- Chạy câu lệnh sau để làm rỗng S3 bucket: `aws s3 rm s3://BUCKET_NAME --recursive`
+- Thay thế `BUCKET_NAME` bằng tên bucket bắt đầu bằng: **aws-sam-cli-managed-default-samclisourcebucket-**
+- Mở bảng điều khiển của [Amazon S3](https://ap-southeast-1.console.aws.amazon.com/s3/buckets?region=ap-southeast-1)
+- Chọn bucket bắt đầu bằng **aws-sam-cli-managed-default-samclisourcebucket-**
+- Ấn **Show versions**
+- Chọn thư mục **fcjdmsapp**
+- Chọn tất cả các object
+- Ấn **Delete**
+- Nhập `permanently delete`
+- Ấn **Delete**
+- Chạy câu lệnh sau để xoá stack:
+`sam delete --stack-name aws-sam-cli-managed-default`
 3. Xoá CloudFront distribution
 - Mở bảng điều khiển của [Amazon CloudFront](https://us-east-1.console.aws.amazon.com/cloudfront/v3/home?region=ap-southeast-1#/distributions)
 - Chọn distribution đang hiện thị

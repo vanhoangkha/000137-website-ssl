@@ -17,43 +17,50 @@ sam deploy --guided
 ```
 
 3. Enter the following content:
-
 - Stack Name []: `fcjdmsapp`
-- AWS Region []: `ap-southeast-1`
-- Confirm changes before deploy [Y/n]: `y`
-- Allow SAM CLI IAM role creation [Y/n]: `y`
-- Disable rollback [y/N]: `n`
-- BooksList may not have authorization defined, Is this okay? [y/N]: `y`
-- BookCreate may not have authorization defined, Is this okay? [y/N]: `y`
-- BookDelete may not have authorization defined, Is this okay? [y/N]: `y`
-- Save arguments to configuration file [Y/n]: `y`
-
-4. Open [AWS APIs Gateway console](https://ap-southeast-1.console.aws.amazon.com/apigateway/main/apis?region=ap-southeast-1)
+    - AWS Region []: `ap-southeast-1`
+    - Parameter DocumentStoreBucketName [fcjdmsstore]: *return*
+    - Parameter WebStoreBucketName [fcjdmswebstore]: *return*
+    - Confirm changes before deploy [y/N]: `y`
+    - Allow SAM CLI IAM role creation [Y/n]: `y`
+    - Disable rollback [y/N]: `n`
+    - DocsList may not have authorization defined, Is this okay? [y/N]: `y`
+    - DocsUpload may not have authorization defined, Is this okay? [y/N]: `y`
+    - DocsDelete may not have authorization defined, Is this okay? [y/N]: `y`
+    - GeneralInforUpload may not have authorization defined, Is this okay? [y/N]: `y`
+    - GeneralInforGet may not have authorization defined, Is this okay? [y/N]: `y`
+    - Save arguments to configuration file [Y/n]: `y`
+    - SAM configuration file [samconfig.toml]: *return*
+    - SAM configuration environment [default]: *return*
+    - Deploy this changeset? [y/N]: `y`
+4. Open [AWS API Gateway console](https://ap-southeast-1.console.aws.amazon.com/apigateway/main/apis?region=ap-southeast-1)
 
 5. Click **API Gateway REST API to Lambda**
 
 ![CreateUserPool](/images/1-preparation/1-preparation-1.png?featherlight=false&width=90pc)
 
 6. Click **Stage** on the left menu
-- Click **staging**
-- Record the **InvokeURL**
+- Click **dev**
+- Note down the **InvokeURL**
 
 ![CreateUserPool](/images/1-preparation/1-preparation-2.png?featherlight=false&width=90pc)
 
-7. If you have not downloaded the application code, run the command below:
+7. If you have not downloaded the application code, run the commands below:
 ```
-git clone https://github.com/AWS-First-Cloud-Journey/FCJ-Serverless-Workshop.git
+git clone https://github.com/AWS-First-Cloud-Journey/
+FCJ-Serverless-DMS.git
+cd FCJ-Serverless-DMS
+npm install
 ```
-- Open the **src/constant.js** file, replace the value of **APP_API_URL** with **InvokeURL**
+8. Open the **src/constant.js** file, replace the value of **APP_API_URL** with **InvokeURL**
 
 ![CreateUserPool](/images/1-preparation/1-preparation-3.png?featherlight=false&width=90pc)
 
-8. Run the below commands to build project
+9. Run the below commands to build project
 ```
-cd fcj-serverless-dms
 yarn build
 ```
-9. We have finished building the front-end. Next, run the below command to upload **build** folder to S3 bucket
+10. We have finished building the front-end. Next, run the below command to upload **build** folder to S3 bucket
 ```
 aws s3 cp build s3://fcjdmswebstore --recursive
 ```

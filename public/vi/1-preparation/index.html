@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.99.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Chuẩn bị :: Serverless - Setting Up an S3 Static SSL Website</title>
 
     
-    <link href="/css/nucleus.css?1681213551" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1681213551" rel="stylesheet">
-    <link href="/css/hybrid.css?1681213551" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1681213551" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1681213551" rel="stylesheet">
-    <link href="/css/auto-complete.css?1681213551" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1681213551" rel="stylesheet">
-    <link href="/css/theme.css?1681213551" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1681213551" rel="stylesheet">
+    <link href="/css/nucleus.css?1682482681" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1682482681" rel="stylesheet">
+    <link href="/css/hybrid.css?1682482681" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1682482681" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1682482681" rel="stylesheet">
+    <link href="/css/auto-complete.css?1682482681" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1682482681" rel="stylesheet">
+    <link href="/css/theme.css?1682482681" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1682482681" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1681213551" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1682482681" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1681213551"></script>
+    <script src="/js/jquery-3.3.1.min.js?1682482681"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1681213551"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1681213551"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1682482681"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1682482681"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1681213551"></script>
+<script type="text/javascript" src="/js/search.js?1682482681"></script>
 
     
   </div>
@@ -83,7 +83,7 @@
   
     
     <li data-nav-id="/vi/1-preparation/" title="Chuẩn bị" class="dd-item 
-        parent
+        
         active
         
         ">
@@ -404,7 +404,7 @@
 					<a href="/1-preparation/_index.vi.files/fcjdmssam-w5.zip" >
 						fcjdmssam-w5.zip
 					</a>
-					(17 ko)
+					(20 ko)
 				</li>
 			
 		
@@ -420,22 +420,29 @@
 <pre tabindex="0"><code>sam build
 sam deploy --guided
 </code></pre><ol start="3">
-<li>Nhập nội dung như sau:</li>
-</ol>
+<li>
+<p>Nhập nội dung như sau:</p>
 <ul>
 <li>Stack Name []: <code>fcjdmsapp</code></li>
 <li>AWS Region []: <code>ap-southeast-1</code></li>
-<li>Confirm changes before deploy [Y/n]: <code>y</code></li>
+<li>Parameter DocumentStoreBucketName [fcjdmsstore]: <em>return</em></li>
+<li>Parameter WebStoreBucketName [fcjdmswebstore]: <em>return</em></li>
+<li>Confirm changes before deploy [y/N]: <code>y</code></li>
 <li>Allow SAM CLI IAM role creation [Y/n]: <code>y</code></li>
 <li>Disable rollback [y/N]: <code>n</code></li>
 <li>DocsList may not have authorization defined, Is this okay? [y/N]: <code>y</code></li>
 <li>DocsUpload may not have authorization defined, Is this okay? [y/N]: <code>y</code></li>
 <li>DocsDelete may not have authorization defined, Is this okay? [y/N]: <code>y</code></li>
+<li>GeneralInforUpload may not have authorization defined, Is this okay? [y/N]: <code>y</code></li>
+<li>GeneralInforGet may not have authorization defined, Is this okay? [y/N]: <code>y</code></li>
 <li>Save arguments to configuration file [Y/n]: <code>y</code></li>
+<li>SAM configuration file [samconfig.toml]: <em>return</em></li>
+<li>SAM configuration environment [default]: <em>return</em></li>
+<li>Deploy this changeset? [y/N]: <code>y</code></li>
 </ul>
-<ol start="4">
+</li>
 <li>
-<p>Mở bảng điều khiển của <a href="https://ap-southeast-1.console.aws.amazon.com/apigateway/main/apis?region=ap-southeast-1">AWS APIs Gateway</a></p>
+<p>Mở bảng điều khiển của <a href="https://ap-southeast-1.console.aws.amazon.com/apigateway/main/apis?region=ap-southeast-1">AWS API Gateway</a></p>
 </li>
 <li>
 <p>Ấn chọn <strong>API Gateway REST API to Lambda</strong></p>
@@ -446,25 +453,27 @@ sam deploy --guided
 <li>Ấn chọn <strong>Stage</strong> ở menu phía bên trái</li>
 </ol>
 <ul>
-<li>Ấn chọn <strong>staging</strong></li>
+<li>Ấn chọn <strong>dev</strong></li>
 <li>Ghi lại <strong>InvokeURL</strong></li>
 </ul>
 <p><img src="/images/1-preparation/1-preparation-2.png?featherlight=false&amp;width=90pc" alt="CreateUserPool"></p>
 <ol start="7">
-<li>Nếu bạn chưa tải code của ứng dụng thì chạy command dưới đây:</li>
+<li>Nếu bạn chưa tải code của ứng dụng thì chạy các command dưới đây:</li>
 </ol>
 <pre tabindex="0"><code>git clone https://github.com/AWS-First-Cloud-Journey/
 FCJ-Serverless-DMS.git
-</code></pre><ul>
+cd FCJ-Serverless-DMS
+npm install
+</code></pre><ol start="8">
 <li>Mở tệp <strong>src/constant.js</strong>, thay giá trị của <strong>APP_API_URL</strong> bằng <strong>InvokeURL</strong></li>
-</ul>
+</ol>
 <p><img src="/images/1-preparation/1-preparation-3.png?featherlight=false&amp;width=90pc" alt="CreateUserPool"></p>
-<ol start="8">
+<ol start="9">
 <li>Thực hiện các câu lệnh dưới đây để build project</li>
 </ol>
-<pre tabindex="0"><code>cd fcj-serverless-dms
+<pre tabindex="0"><code>cd FCJ-Serverless-DMS
 yarn build
-</code></pre><ol start="9">
+</code></pre><ol start="10">
 <li>Chúng ta đã build xong front-end. Tiếp theo thực hiện câu lệnh sau để tải thư mục <strong>build</strong> lên S3 bucket</li>
 </ol>
 <pre tabindex="0"><code>aws s3 cp build s3://fcjdmswebstore --recursive
@@ -610,19 +619,19 @@ yarn build
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1681213551"></script>
-    <script src="/js/perfect-scrollbar.min.js?1681213551"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1681213551"></script>
-    <script src="/js/jquery.sticky.js?1681213551"></script>
-    <script src="/js/featherlight.min.js?1681213551"></script>
-    <script src="/js/highlight.pack.js?1681213551"></script>
+    <script src="/js/clipboard.min.js?1682482681"></script>
+    <script src="/js/perfect-scrollbar.min.js?1682482681"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1682482681"></script>
+    <script src="/js/jquery.sticky.js?1682482681"></script>
+    <script src="/js/featherlight.min.js?1682482681"></script>
+    <script src="/js/highlight.pack.js?1682482681"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1681213551"></script>
-    <script src="/js/learn.js?1681213551"></script>
-    <script src="/js/hugo-learn.js?1681213551"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1682482681"></script>
+    <script src="/js/learn.js?1682482681"></script>
+    <script src="/js/hugo-learn.js?1682482681"></script>
 
-    <link href="/mermaid/mermaid.css?1681213551" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1681213551"></script>
+    <link href="/mermaid/mermaid.css?1682482681" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1682482681"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

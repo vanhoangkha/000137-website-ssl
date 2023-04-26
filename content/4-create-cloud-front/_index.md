@@ -51,7 +51,7 @@ pre : " <b> 4. </b> "
 - Select the newly created CloudFront distribution
 - Click **Create records**
 
-![CreateRecord](/images/4-create-cloud-front/4-create-cloud-front-12.png?featherlight=false&width=90pc)
+![CreateRecord](/images/4-create-cloud-front/4-create-cloud-front-8.png?featherlight=false&width=90pc)
 
 12. You have created the records for CloudFront distribution.
 
